@@ -88,12 +88,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.clg
+//            signingConfig signingConfigs.clg
         }
         debug {
             minifyEnabled false//开启混淆
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.clg
+//            signingConfig signingConfigs.clg
         }
     }
     compileOptions {
