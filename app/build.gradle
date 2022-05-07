@@ -7,15 +7,15 @@ plugins {
 
 android {
 
-    signingConfigs {
-        clg {
-            keyAlias 'C-EAGLE'
-            keyPassword 'C-EAGLE'
-            storeFile file('E:/jks/C-EAGLE.jks')
-            storePassword 'C-EAGLE'
-            v2SigningEnabled false
-        }
-    }
+//    signingConfigs {
+//        clg {
+//            keyAlias 'C-EAGLE'
+//            keyPassword 'C-EAGLE'
+//            storeFile file('E:/jks/C-EAGLE.jks')
+//            storePassword 'C-EAGLE'
+//            v2SigningEnabled false
+//        }
+//    }
     compileSdk 30
     defaultConfig {
         multiDexEnabled true
