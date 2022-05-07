@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog">
+
+    <LinearLayout
+        android:id="@+id/dialogCollection_titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_orange_top_4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="收款"
+            android:textColor="@color/color_white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dialogCollection_dismissImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:src="@drawable/icon_dismiss" />
+    </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     app:layout_constraintTop_toBottomOf="@id/dialogCollection_titleLayout"
+     android:layout_height="wrap_content"
+     android:background="@drawable/shape_white_boom_4"
+     android:paddingBottom="50dp"
+     android:paddingTop="16dp"
+     android:orientation="vertical">
+     <LinearLayout
+         android:id="@+id/dialogCollection_orderPriceLayout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         android:orientation="horizontal"
+         android:paddingLeft="50dp"
+         android:paddingRight="50dp">
+
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:text="订单金额："
+             android:textColor="@color/color_1a"
+             android:textSize="18sp" />
+
+         <TextView
+             android:id="@+id/dialogCollection_orderPriceText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:minWidth="140dp"
+             android:text="￥0.00"
+             android:textColor="@color/color_orange"
+             android:textSize="18sp"
+             android:textStyle="bold" />
+     </LinearLayout>
+
+     <LinearLayout
+         android:id="@+id/dialogCollection_promotionPriceLayout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="13dp"
+         android:gravity="center_vertical"
+         android:orientation="horizontal"
+         android:paddingLeft="50dp"
+         android:paddingRight="50dp">
+
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:text="促销立减："
+             android:textColor="@color/color_1a"
+             android:textSize="18sp" />
+
+         <TextView
+             android:id="@+id/dialogCollection_promotionPriceText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:minWidth="140dp"
+             android:text="-￥0.00"
+             android:textColor="@color/color_1a"
+             android:textSize="18sp" />
+     </LinearLayout>
+     <LinearLayout
+         android:id="@+id/dialogCollection_rebatePriceLayout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="13dp"
+         android:gravity="center_vertical"
+         android:orientation="horizontal"
+         android:paddingLeft="50dp"
+         android:paddingRight="50dp">
+
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:text="商家返利："
+             android:textColor="@color/color_1a"
+             android:textSize="18sp" />
+
+         <TextView
+             android:id="@+id/dialogCollection_rebatePriceText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:minWidth="140dp"
+             android:text="-￥0.00"
+             android:textColor="@color/color_1a"
+             android:textSize="18sp" />
+     </LinearLayout>
+     <LinearLayout
+         android:id="@+id/dialogCollection_payPriceLayout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="13dp"
+         android:gravity="center_vertical"
+         android:orientation="horizontal"
+         android:paddingLeft="50dp"
+         android:paddingRight="50dp">
+
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:text="应付金额："
+             android:textColor="@color/color_1a"
+             android:textSize="18sp" />
+
+<!--         <EditText-->
+<!--             android:id="@+id/dialogCollection_payPriceEdit"-->
+<!--             android:layout_width="wrap_content"-->
+<!--             android:layout_height="wrap_content"-->
+<!--             android:background="@drawable/shape_ccc_line"-->
+<!--             android:drawableRight="@drawable/icon_collection_dialog_price_edit"-->
+<!--             android:drawablePadding="5dp"-->
+<!--             android:gravity="center"-->
+<!--             android:minWidth="140dp"-->
+<!--             android:inputType="numberDecimal"-->
+<!--             android:paddingLeft="12dp"-->
+<!--             android:paddingTop="5dp"-->
+<!--             android:paddingRight="12dp"-->
+<!--             android:paddingBottom="5dp"-->
+<!--             android:text="0"-->
+<!--             android:textColor="@color/color_1a"-->
+<!--             android:textColorHint="@color/color_ccc"-->
+<!--             android:textSize="18sp"-->
+<!--             android:textStyle="bold" />-->
+         <TextView
+             android:id="@+id/dialogCollection_payPriceText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:minWidth="140dp"
+             android:text="￥0.00"
+             android:textColor="@color/color_1a"
+             android:textSize="18sp" />
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="60dp"
+         android:orientation="horizontal"
+         android:paddingLeft="60dp"
+         android:paddingRight="60dp">
+
+         <LinearLayout
+             android:id="@+id/dialogCollection_wxPayBtn"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:background="@drawable/selector_e6_line_btn_4"
+             android:gravity="center"
+             android:paddingTop="10dp"
+             android:paddingBottom="10dp">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/icon_collection_wx" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="6dp"
+                 android:gravity="center_vertical"
+                 android:text="微信"
+                 android:textColor="@color/color_1a"
+                 android:textSize="16sp" />
+         </LinearLayout>
+
+         <LinearLayout
+             android:id="@+id/dialogCollection_aliPayBtn"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="15dp"
+             android:layout_weight="1"
+             android:background="@drawable/selector_e6_line_btn_4"
+             android:gravity="center"
+             android:paddingTop="10dp"
+             android:paddingBottom="10dp">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/icon_collection_alipay" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="6dp"
+                 android:gravity="center_vertical"
+                 android:text="支付宝"
+                 android:textColor="@color/color_1a"
+                 android:textSize="16sp" />
+         </LinearLayout>
+
+         <LinearLayout
+             android:id="@+id/dialogCollection_cashPayBtn"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="15dp"
+             android:layout_weight="1"
+             android:background="@drawable/selector_e6_line_btn_4"
+             android:gravity="center"
+             android:paddingTop="10dp"
+             android:paddingBottom="10dp">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/icon_collection_cash" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="6dp"
+                 android:gravity="center_vertical"
+                 android:text="现金"
+                 android:textColor="@color/color_1a"
+                 android:textSize="16sp" />
+         </LinearLayout>
+
+         <LinearLayout
+             android:id="@+id/dialogCollection_freeOrderBtn"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="15dp"
+             android:layout_weight="1"
+             android:background="@drawable/selector_e6_line_btn_4"
+             android:gravity="center"
+             android:paddingTop="10dp"
+             android:paddingBottom="10dp">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/icon_collection_free_order" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="6dp"
+                 android:gravity="center_vertical"
+                 android:text="免单"
+                 android:textColor="@color/color_1a"
+                 android:textSize="16sp" />
+         </LinearLayout>
+     </LinearLayout>
+ </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

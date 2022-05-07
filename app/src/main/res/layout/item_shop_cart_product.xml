@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/itemShopCartProduct_lineView"
+        style="@style/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="12dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/itemShopCartProduct_lineView">
+
+        <ImageView
+            android:id="@+id/itemShopCartProduct_weighImage"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:src="@drawable/icon_product_weigh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/itemShopCartProduct_productName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_1f"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintLeft_toRightOf="@id/itemShopCartProduct_weighImage"
+            app:layout_constraintRight_toLeftOf="@id/itemShopCartProduct_unitPrice"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/itemShopCartProduct_unitPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:textColor="@color/color_1f"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintLeft_toRightOf="@id/itemShopCartProduct_productName"
+            app:layout_constraintRight_toLeftOf="@id/itemShopCartProduct_btnLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/itemShopCartProduct_btnLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintLeft_toRightOf="@id/itemShopCartProduct_unitPrice"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/itemShopCartProduct_subtractBtn"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="@drawable/shape_all_f5"
+                android:src="@drawable/icon_shop_cart_subtract" />
+
+            <TextView
+                android:id="@+id/itemShopCartProduct_numText"
+                android:layout_width="44dp"
+                android:layout_height="22dp"
+                android:background="@drawable/shape_f5_line"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="1"
+                android:textColor="@color/color_1a"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/itemShopCartProduct_addBtn"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="@drawable/shape_all_f5"
+                android:src="@drawable/icon_shop_cart_add" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/itemShopCartProduct_specName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/color_4d"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/itemShopCartProduct_weighImage"
+            app:layout_constraintRight_toLeftOf="@id/itemShopCartProduct_unitName"
+            app:layout_constraintTop_toBottomOf="@id/itemShopCartProduct_productName" />
+
+        <TextView
+            android:id="@+id/itemShopCartProduct_unitName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/color_4d"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/itemShopCartProduct_specName"
+            app:layout_constraintTop_toBottomOf="@id/itemShopCartProduct_productName" />
+
+        <TextView
+            android:id="@+id/itemShopCartProduct_totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/color_4d"
+            android:textSize="12sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itemShopCartProduct_btnLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,153 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+
+    signingConfigs {
+        clg {
+            keyAlias 'C-EAGLE'
+            keyPassword 'C-EAGLE'
+            storeFile file('E:/jks/C-EAGLE.jks')
+            storePassword 'C-EAGLE'
+            v2SigningEnabled false
+        }
+    }
+    compileSdk 30
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.hby.cashier"
+        minSdk 21
+        targetSdk 29
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    productFlavors {
+        releases {
+            versionName "v" + defaultConfig.versionName
+            applicationId rootProject.ext.applicationId_R
+            manifestPlaceholders = [
+                    PACKAGE_NAME : applicationId,
+                    APP_NAME     : rootProject.ext.NAME_R,
+            ]
+            buildConfigField("String", "NET_URL", rootProject.ext.serverAddress_R)
+            buildConfigField("String", "DOWNLOAD_URL", rootProject.ext.DOWNLOAD_URL_R)
+            buildConfigField("String", "WEB_URL", rootProject.ext.WEB_URL_R)
+            buildConfigField("String", "SIGN_KEY", rootProject.ext.SIGN_KEY_R)
+            buildConfigField("String", "QINIU_URL", rootProject.ext.QINIU_URL)
+            buildConfigField("String", "DATA_PASS_KEY", rootProject.ext.DATA_KEY)
+        }
+        develop {
+            versionName "dev" + defaultConfig.versionName
+            applicationId rootProject.ext.applicationId_T
+            manifestPlaceholders = [
+                    PACKAGE_NAME : applicationId,
+                    APP_NAME     : rootProject.ext.NAME_T,
+            ]
+            buildConfigField("String", "NET_URL", rootProject.ext.serverAddress_T)
+            buildConfigField("String", "DOWNLOAD_URL", rootProject.ext.DOWNLOAD_URL_R)
+            buildConfigField("String", "WEB_URL", rootProject.ext.WEB_URL_T)
+            buildConfigField("String", "SIGN_KEY", rootProject.ext.SIGN_KEY_T)
+            buildConfigField("String", "QINIU_URL", rootProject.ext.QINIU_URL)
+            buildConfigField("String", "DATA_PASS_KEY", rootProject.ext.DATA_KEY)
+        }
+        bate {
+            versionName "bate" + defaultConfig.versionName
+            applicationId rootProject.ext.applicationId_C
+            manifestPlaceholders = [
+                    PACKAGE_NAME : applicationId,
+                    APP_NAME     : rootProject.ext.NAME_C,
+            ]
+            buildConfigField("String", "NET_URL", rootProject.ext.serverAddress_C)
+            buildConfigField("String", "DOWNLOAD_URL", rootProject.ext.DOWNLOAD_URL_C)
+            buildConfigField("String", "WEB_URL", rootProject.ext.WEB_URL_C)
+            buildConfigField("String", "SIGN_KEY", rootProject.ext.SIGN_KEY_T)
+            buildConfigField("String", "QINIU_URL", rootProject.ext.QINIU_URL)
+            buildConfigField("String", "DATA_PASS_KEY", rootProject.ext.DATA_KEY)
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def fileName = "Clg_Cashier" +
+                    "-${variant.productFlavors[0].name}" +
+                    "-${variant.versionName}" +
+                    "-${variant.versionCode}" +
+                    "-${releaseTime()}.apk"
+            outputFileName = fileName
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.clg
+        }
+        debug {
+            minifyEnabled false//开启混淆
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.clg
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':mvvmLib')
+    implementation files('libs/scale-service-part-lib1.2.jar')
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+
+    implementation 'com.yanzhenjie:permission:2.0.3'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.github.houyinyu:CipherLitePal:1.0'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation 'com.alibaba:fastjson:1.2.31'
+    //商品打印服务
+    implementation 'com.sunmi:printerlibrary:1.0.5'
+    implementation 'com.sunmi:DeviceManagerLibrary:1.0.17'
+    implementation 'com.sunmi:SunmiOpenService:1.0.2'
+
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'org.xutils:xutils:3.9.0'
+
+    implementation 'net.zetetic:android-database-sqlcipher:4.2.0'
+
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    //zxing3.4.0最低支持android7.0
+    implementation 'com.google.zxing:core:3.2.1'
+}

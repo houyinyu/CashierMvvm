@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 圆形ImageView -->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension"/>
+        <attr name="border_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="CirclePercentBar">
+        <attr name="arcWidth" format="dimension"/>
+        <attr name="maxTextSize" format="dimension"/>
+        <attr name="minTextSize" format="dimension"/>
+        <attr name="circleRadius" format="dimension"/>
+        <attr name="centerTextColor" format="color"/>
+        <attr name="arcPercentColor" format="color"/>
+        <attr name="arcBackColor" format="color"/>
+    </declare-styleable>
+</resources>

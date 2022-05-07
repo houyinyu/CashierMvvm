@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hby.cashier.view_model.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/includeHomeTop_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="23dp"
+            app:layout_constraintBottom_toTopOf="@id/includeHomeTop_line"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:src="@drawable/icon_cailgou" />
+
+            <TextView
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="11dp"
+                android:background="@color/color_ccc" />
+
+            <TextView
+                android:id="@+id/includeHomeTop_shopNameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/color_1a"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收银员："
+                android:textColor="@color/color_1a"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/includeHomeTop_cashierText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/color_1a"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/includeHomeTop_timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2020/10/22 10:25"
+                android:textColor="@color/color_1a"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/includeHomeTop_wifiBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@color/color_white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/icon_wifi_signal" />
+
+            <ImageButton
+                android:id="@+id/includeHomeTop_synchronizationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/color_white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/icon_data_synchronization"
+                binding:onClickCommand="@{viewModel.dataSynchronizationClick}" />
+
+            <ImageButton
+                android:id="@+id/includeHomeTop_lockScreenBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/color_white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/icon_lock_screen"
+                binding:onClickCommand="@{viewModel.lockScreenClick}" />
+
+            <ImageButton
+                android:id="@+id/includeHomeTop_minimizeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/color_white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/icon_window_minimize"
+                binding:onClickCommand="@{viewModel.minimizeUIClick}" />
+
+            <ImageButton
+                android:id="@+id/includeHomeTop_loginOutBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="@color/color_white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/icon_login_out"
+                binding:onClickCommand="@{viewModel.changeShiftsClick}" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/includeHomeTop_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_e6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/includeHomeTop_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

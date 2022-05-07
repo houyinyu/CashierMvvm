@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog">
+
+    <LinearLayout
+        android:id="@+id/dialogChangeShifts_titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_orange_top_4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="交接班"
+            android:textColor="@color/color_white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dialogChangeShifts_dismissImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="9dp"
+            android:paddingTop="11dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="11dp"
+            android:src="@drawable/icon_dismiss" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_white_boom_4"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingTop="12dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="25dp"
+        app:layout_constraintTop_toBottomOf="@id/dialogChangeShifts_titleLayout">
+
+        <LinearLayout
+            android:id="@+id/dialogChangeShifts_cashierLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收银员:"
+                android:textColor="@color/color_1a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/dialogChangeShifts_cashier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="张三"
+                android:textColor="@color/color_1a"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialogChangeShifts_cashierTimeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/dialogChangeShifts_cashierLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收银时间:"
+                android:textColor="@color/color_1a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/dialogChangeShifts_cashierTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="2022/06/26 16:00~2022/06/27 08:00"
+                android:textColor="@color/color_1a"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialogChangeShifts_recordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/shape_f5_line"
+            android:orientation="vertical"
+            android:padding="1dp"
+            app:layout_constraintTop_toBottomOf="@id/dialogChangeShifts_cashierTimeLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="收银方式"
+                    android:textColor="@color/color_1a"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_f5" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="单量"
+                    android:textColor="@color/color_1a"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_f5" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="合计金额"
+                    android:textColor="@color/color_1a"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dialogChangeShifts_recordRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/dialogChangeShifts_recordLayout">
+
+            <TextView
+                android:id="@+id/dialogChangeShifts_recordBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/lower_horizontal_line"
+                android:text="交接班记录"
+                android:textColor="@color/selector_orange_60_press"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/dialogChangeShifts_changeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/selector_orange_btn_4"
+                android:paddingLeft="28dp"
+                android:paddingTop="10dp"
+                android:visibility="gone"
+                android:paddingRight="28dp"
+                android:paddingBottom="10dp"
+                android:text="交接班"
+                android:textColor="@color/selector_white_60_press"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/dialogChangeShifts_loginOutBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/selector_orange_btn_4"
+                android:paddingLeft="28dp"
+                android:paddingTop="10dp"
+                android:paddingRight="28dp"
+                android:visibility="gone"
+                android:paddingBottom="10dp"
+                android:text="退出登录"
+                android:textColor="@color/selector_white_60_press"
+                android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/dialogChangeShifts_printBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:button="@drawable/selector_box_check"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="是否打印交接班"
+                android:textColor="@color/selector_1a_60_press"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

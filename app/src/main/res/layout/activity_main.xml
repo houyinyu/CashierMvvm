@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hby.cashier.view_model.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f5"
+        tools:context=".ui.MainActivity">
+
+        <include
+            android:id="@+id/includeHomeTopLayout"
+            layout="@layout/include_home_top_layout"
+            app:viewModel="@{viewModel}" />
+
+        <include
+            android:id="@+id/includeHomeLeftLayout"
+            layout="@layout/include_home_left_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:viewModel="@{viewModel}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/includeHomeRightLayout"
+            app:layout_constraintTop_toBottomOf="@id/includeHomeTopLayout" />
+
+        <include
+            android:id="@+id/includeHomeRightLayout"
+            layout="@layout/include_home_right_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:viewModel="@{viewModel}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="5"
+            app:layout_constraintLeft_toRightOf="@id/includeHomeLeftLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/includeHomeTopLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">ClgCashier</string>
+    <string name="system_name">收银系统</string>
+    <string name="device_sn_name">设备编号：</string>
+    <string name="login_welcome">欢迎您，\n使用菜乐购收银系统</string>
+
+    <!--电子秤-->
+    <string name="scale_max">最大秤量：6/15kg</string>
+    <string name="scale_min">最小秤量：40g</string>
+    <string name="scale_unit">分度值 e=2/5g</string>
+    <string name="scale_stable">稳定</string>
+    <string name="scale_net">净重</string>
+    <string name="scale_zero">零位</string>
+    <string name="scale_net_kg">净重(kg)</string>
+    <string name="scale_net_nopnet">计重(kg)</string>
+    <string name="scale_pnet_kg">皮重(kg)</string>
+    <string name="scale_price">单价(元/kg)</string>
+    <string name="scale_total_money">总价(元)</string>
+    <string name="scale_over_max">超载</string>
+    <string name="scale_over_mix">欠载</string>
+    <string name="scale_tips_havenumpent">电子秤已经设置数字皮重，无法去皮</string>
+    <string name="scale_tips_clearfail">清皮失败，毛重不为0</string>
+    <string name="more_peele">去皮</string>
+    <string name="more_clear">清零</string>
+    <string name="more_num_peele">数字去皮</string>
+    <string name="more_clear_peele">清皮</string>
+
+    <!--小票打印-->
+    <string name="print_proofs">打印样张</string>
+    <string name="print_order_number">订单编号：</string>
+    <string name="print_order_time">下单时间：</string>
+    <string name="print_payment_method">支付方式：</string>
+    <string name="print_ali_wx">支付宝/微信</string>
+    <string name="print_tips_havemoney">此单消费为真实定额交易，请核实你的付款账户信息</string>
+    <string name="print_tips_nomoney">此单消费仅为功能演示，非真实交易</string>
+    <string name="print_thanks">感谢选择商米!</string>
+    <string name="print_total_payment">累计金额：</string>
+    <string name="print_real_payment">实际收款：</string>
+    <string name="print_rmb">元</string>
+    <string name="print_remark">请当面点清所购商品清单或找零，保留好小票以作开发票、退货凭证</string>
+
+    <!--打印菜单-->
+    <string name="menus_product_title">销售单据</string>
+    <string name="menus_change_shift_title">交接班单据</string>
+    <string name="menus_number">编号</string>
+    <string name="menus_product_name">商品名称</string>
+    <string name="menus_unit_num">数量</string>
+    <string name="menus_unit_price">小计</string>
+    <string name="menus_total_price">金额</string>
+    <string name="menus_pay_type">收款方式</string>
+    <string name="menus_pay_num">单数</string>
+    <string name="menus_pay_price">合计</string>
+
+    <!--购物车菜单-->
+    <string name="shop_car">购物车</string>
+    <string name="shop_car_nothing">购物车中没有商品哟！</string>
+    <string name="goods_nothing">暂无商品</string>
+    <string name="shop_car_clear">清空</string>
+    <string name="shop_car_total">总计</string>
+    <string name="shop_car_offer">优惠</string>
+    <string name="shop_car_number">数量</string>
+    <string name="shop_car_code">编号</string>
+    <string name="shop_car_receivable">应收</string>
+    <string name="shop_car_goods_name">品名</string>
+    <string name="shop_car_unit_money">金额</string>
+    <string name="shop_car_totle2">合计:</string>
+    <string name="shop_car_go_pay">快速支付</string>
+    <string name="shop_car_vip_pay">会员支付</string>
+    <string name="shop_car_vip_pay_tips">输入会员手机号码</string>
+    <!--单位-->
+    <string name="units_money">¥</string>
+    <string name="units_money_units">￥</string>
+
+    <!--支付-->
+    <string name="pay_cash">现金</string>
+    <string name="pay_ali">支付宝</string>
+    <string name="pay_wx">微信</string>
+    <string name="pay_code">扫码支付</string>
+    <string name="pay_noface_change">请检查连接并重启应用后重试，或选用其他支付方式</string>
+    <string name="pay_fail_tips">请重新付款或选择其他方式 </string>
+    <string name="pay_need_money">需收款：</string>
+    <string name="pay_give_money">需付款：</string>
+    <string name="pay_confirm">确认已收款</string>
+    <string name="pay_confirm_true">已收款：</string>
+    <string name="pay_pay_true">已付款：</string>
+    <string name="pay_paying">支付中…</string>
+    <string name="pay_repay">重新支付</string>
+    <string name="pay_get_moeny">开始付款</string>
+    <string name="pay_fail">支付失败！</string>
+    <string name="pay_pay_moeny">支付金额：</string>
+    <string name="pay_total_moeny">总金额：</string>
+    <string name="pay_thank_you">感谢您的惠顾！</string>
+    <string name="pay_paying_wait">正在支付，请稍候</string>
+    <string name="pay_again">重试</string>
+    <string name="pay_by_other">其他付款方式</string>
+</resources>
