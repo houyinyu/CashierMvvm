@@ -4,7 +4,7 @@
 ## 使用方式
 
 ```Java
-    implementation 'com.github.houyinyu:mvvmLib:1.0'
+    implementation 'com.github.houyinyu:mvvmLib:1.1'
 ```
 
 
@@ -42,6 +42,7 @@
 
 4.然后打开jitpack链接 https://jitpack.io ，输入GitHub项目地址
 
+> 注意：在app下的build.gradle中注释掉签名相关的信息
 
 #### 通过SSH提交到Github
  >* 创建SSH KEY
